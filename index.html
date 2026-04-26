@@ -9,14 +9,15 @@
 <style>
 :root{--ink:#1a1a2e;--warm:#f5f0eb;--accent:#e8553d;--accent-hover:#d44a34;--muted:#6b7280;--border:#e5e1dc;--white:#fff}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--warm);line-height:1.6;-webkit-font-smoothing:antialiased}
 .site-header{background:var(--ink);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:1000}
+.header-left{display:flex;align-items:center;gap:16px}
 .header-logo{display:flex;align-items:center;text-decoration:none;position:relative}
 .header-logo-text{font-family:'DM Serif Display',serif;font-size:28px;color:#fff;letter-spacing:0.5px}
 .header-logo-bar{position:absolute;bottom:-2px;left:2px;width:28px;height:3px;background:var(--accent);border-radius:2px}
-.header-right{display:flex;align-items:center;gap:12px}
+.header-right{display:flex;align-items:center;gap:10px}
 .lang-toggle{display:flex;background:rgba(255,255,255,0.08);border-radius:8px;padding:3px}
-.lang-btn{padding:6px 14px;border:none;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .25s;background:0 0;color:rgba(255,255,255,0.45);letter-spacing:.3px}
-.lang-btn.active{background:var(--accent);color:var(--white);box-shadow:0 2px 8px rgba(232,85,61,.3)}
-.lang-btn:not(.active):hover{color:rgba(255,255,255,0.8)}
+.lang-btn{padding:6px 12px;border:none;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .25s;background:0 0;color:rgba(255,255,255,0.45);letter-spacing:.3px}
+.lang-btn.active{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9)}
+.lang-btn:not(.active):hover{color:rgba(255,255,255,0.7)}
 .nav-login{padding:7px 18px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;transition:all .2s}
 .nav-login:hover{border-color:rgba(255,255,255,0.4);color:#fff}
 .nav-signup{padding:7px 18px;background:var(--accent);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--white);text-decoration:none;transition:all .2s;box-shadow:0 2px 8px rgba(232,85,61,.25)}
@@ -66,14 +67,16 @@ footer a:hover{color:var(--warm)}
 .footer-logo{display:inline-block;position:relative;margin-bottom:16px}
 .footer-logo-text{font-family:'DM Serif Display',serif;font-size:24px;color:#b0aaa2}
 .footer-logo-bar{position:absolute;bottom:-2px;left:2px;width:22px;height:2.5px;background:var(--accent);border-radius:2px}
-@media(max-width:600px){.site-header{padding:12px 16px;gap:8px}.header-logo-text{font-size:24px}.header-logo-bar{width:24px}.hero{padding:56px 20px 48px}.lang-btn{padding:5px 10px;font-size:12px}.nav-login,.nav-signup{padding:5px 12px;font-size:12px}.header-right{gap:6px}}
+@media(max-width:600px){.site-header{padding:12px 16px}.header-left{gap:10px}.header-logo-text{font-size:22px}.header-logo-bar{width:22px}.hero{padding:56px 20px 48px}.lang-btn{padding:5px 8px;font-size:11px}.nav-login,.nav-signup{padding:5px 12px;font-size:12px}.header-right{gap:6px}}
 </style>
 </head>
 <body>
 <header class="site-header">
-  <a href="#" class="header-logo"><span class="header-logo-text">claro</span><span class="header-logo-bar"></span></a>
+  <div class="header-left">
+    <a href="#" class="header-logo"><span class="header-logo-text">claro</span><span class="header-logo-bar"></span></a>
+    <div class="lang-toggle"><button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button><button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button></div>
+  </div>
   <div class="header-right">
-    <div class="lang-toggle"><button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button><button class="lang-btn" id="btn-es" onclick="setLang('es')">Español</button></div>
     <a href="#" class="nav-login" data-lang="en">Log in</a><a href="#" class="nav-login" data-lang="es">Entrar</a>
     <a href="#" class="nav-signup" data-lang="en">Sign up</a><a href="#" class="nav-signup" data-lang="es">Regístrate</a>
   </div>
